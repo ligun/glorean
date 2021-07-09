@@ -1,5 +1,10 @@
 # glorean
 
+[![Java](https://img.shields.io/badge/java-8+-4c7e9f.svg)](https://www.oracle.com/technetwork/java/javase/downloads)
+[![Groovy](https://img.shields.io/badge/Groovy-3.0+-4c7e9f.svg)](https://groovy.apache.org/download.html)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Run unit test](https://github.com/ligun/glorean/actions/workflows/test.yaml/badge.svg)](https://github.com/ligun/glorean/actions/workflows/test.yaml)
+
 A time travel library  
 Inspired by the Ruby library [delorean](https://github.com/bebanjo/delorean)
 
