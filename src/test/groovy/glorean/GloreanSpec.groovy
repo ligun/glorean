@@ -6,12 +6,13 @@ import spock.lang.Specification
 import java.time.LocalDateTime
 import java.time.OffsetDateTime
 import java.time.ZoneId
+import java.time.ZoneOffset
 import java.time.ZonedDateTime
 
 class GloreanSpec extends Specification {
     static LOCAL_DATE_STRING = '1955-11-05T00:00:00'
-    static OFFSET_DATE_STRING = LOCAL_DATE_STRING + '+09:00'
-    static ZONED_DATE_STRING = OFFSET_DATE_STRING + '[Asia/Tokyo]'
+    static OFFSET_DATE_STRING = LOCAL_DATE_STRING + ZoneOffset.systemDefault()
+    static ZONED_DATE_STRING = OFFSET_DATE_STRING + '[' + ZoneId.systemDefault() + ']'
 
     def cleanup() {
         Glorean.back()
@@ -40,7 +41,7 @@ class GloreanSpec extends Specification {
         def now = OffsetDateTime.now()
 
         then:
-        now == OffsetDateTime.of(LocalDateTime.parse(LOCAL_DATE_STRING), ZoneId.systemDefault().offset)
+        now == OffsetDateTime.of(LocalDateTime.parse(LOCAL_DATE_STRING), ZoneOffset.systemDefault().offset)
     }
 
     def "Can be set with OffsetDateTime"() {
